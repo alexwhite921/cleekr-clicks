@@ -28,10 +28,10 @@ def track_click(subid: str = "", offer_id: int = 0, ip: str = None):
         cur = conn.cursor()
         cur.execute(
             """
-            INSERT INTO clicks (subid, offer_id, ip)
-            VALUES (%s, %s, %s)
+            INSERT INTO clicks (subid)
+            VALUES (%s)
             """,
-            (subid, offer_id, ip)
+            (subid)
         )
         conn.commit()
         cur.close()
