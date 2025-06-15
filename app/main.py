@@ -4,9 +4,6 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 import logging
 
-
-
-
 app = FastAPI()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -40,7 +37,7 @@ def track_click(subid: str = "", offer_id: int = 0, ip: str = None):
         cur.close()
         conn.close()
     except Exception as e:
-    logging.error(f"Database error: {e}", exc_info=True)
-    raise HTTPException(status_code=500, detail=f"DB error: {e}")
+        logging.error(f"Database error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"DB error: {e}")
 
     return {"status": "click logged", "subid": subid, "offer_id": offer_id}
