@@ -7,7 +7,7 @@ from psycopg2.extras import RealDictCursor
 
 
 app = FastAPI()
-
+print("DATABASE_URL =", DATABASE_URL)
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 if not DATABASE_URL:
