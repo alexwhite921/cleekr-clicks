@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS clicks (
+    id SERIAL PRIMARY KEY,
+    subid TEXT,
+    offer_id INTEGER,
+    ip TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
